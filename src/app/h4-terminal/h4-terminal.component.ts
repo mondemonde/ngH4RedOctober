@@ -94,10 +94,10 @@ export class H4TerminalComponent implements OnInit {
       enabled: $('body').attr('onload') === undefined,
       onInit: function () {
         // set_size();hlep        
-        this.echo('Type [[b;#fff;]NOTE:] this game is not yet playable.');
-        this.echo('Type [[b;#fff;]NOTE:] this game is not yet playable.');   
-        this.echo('Type [[b;#fff;]NOTE:] this game is not yet playable.');
-        this.echo('Type [[b;#fff;]NOTE:] this game is not yet playable.');   
+        this.echo('     [[b;#fff;]NOTE:] this game is not yet playable.');
+        this.echo('     [[b;#fff;]NOTE:] this game is not yet playable.');   
+        this.echo('     [[b;#fff;]NOTE:] this game is not yet playable.');
+        this.echo('     [[b;#fff;]NOTE:] this game is not yet playable.');   
         
                
         this.echo('Type [[b;#fff;]clear] to clear console.');
@@ -230,6 +230,7 @@ export class H4TerminalComponent implements OnInit {
       case 'game over': {
         GameService.echoGameOver();
         result = cmd;
+        break;
       }
 
 
@@ -237,8 +238,6 @@ export class H4TerminalComponent implements OnInit {
         {
 
           result =GameService.echoHelp();
-
-
           break;
         }
     }
