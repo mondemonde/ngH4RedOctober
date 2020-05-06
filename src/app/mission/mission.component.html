@@ -1,0 +1,49 @@
+<div style="text-align: center;">
+    <pre style="color: olive;">
+▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄
+██░▄▀▄░██▄██░▄▄█░▄▄██▄██▀▄▄▀█░▄▄▀█▀████░██░█░██░█░▄▄▀█▄░▄███░▄▄█▀▄▄▀█░▄▄▀████░▄▄▀█░▄▄█░▄▀████░▄▄▄░█▀▄▀█▄░▄█▀▄▄▀█░▄▄▀█░▄▄█░▄▄▀██
+██░█░█░██░▄█▄▄▀█▄▄▀██░▄█░██░█░██░██████░▄▄░█░██░█░██░██░████░▄██░██░█░▀▀▄████░▀▀▄█░▄▄█░█░████░███░█░█▀██░██░██░█░▄▄▀█░▄▄█░▀▀▄██
+██░███░█▄▄▄█▄▄▄█▄▄▄█▄▄▄██▄▄██▄██▄█▄████░██░██▄▄▄█▄██▄██▄████▄████▄▄██▄█▄▄████░██░█▄▄▄█▄▄█████░▀▀▀░██▄███▄███▄▄██▄▄▄▄█▄▄▄█▄█▄▄██
+▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀
+
+</pre>
+
+    <!-- <pre>
+ █▓▒▒░░░Mission : Hunt for Red October░░░▒▒▓█
+</pre> -->
+  </div>
+ <div class='container'>
+
+
+   <div class="tv">
+     <!-- <div id="term"></div> -->
+     <br>
+     
+
+     <ngx-typed-js [strings]="intro" style="color: olivedrab; height: 500px;" [loop]="true" (completed)="endNarration()">
+       <div class="typing"> </div>
+      
+     </ngx-typed-js>
+
+
+     <!-- <ngx-typed-js [strings]="intro" style="color: olivedrab; height: 500px;" [loop]="false" (completed)="endNarration()">
+      <div class="typing"> </div>
+     
+    </ngx-typed-js> -->
+
+     
+     <div class="col console fixed-bottom">CONSOLE:
+      <!-- <div class="tv">
+        <div id="term" style="background-color: black;" ></div>
+        <div></div>
+        <div class="scanlines">cle
+          
+        </div> -->
+        <app-h4-terminal></app-h4-terminal>
+
+    </div>
+
+     <div class="flicker"></div>
+     <div class="scanlines"></div>
+     
+   </div>

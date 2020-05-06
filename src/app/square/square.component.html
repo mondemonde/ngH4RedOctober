@@ -1,0 +1,33 @@
+<div id={{id}} class='sector-card stretchy'>
+      
+    <!-- <img src="/assets/redsub.png" alt="sub"> -->
+   <!-- <img src="/assets/warship.png" alt="sub"> -->
+  <!-- <div  [ngSwitch]="status">
+    <div *ngSwitchCase="SqrStatus.Sub">Groot</div>
+    <div *ngSwitchCase="'Ironman'">Ironman</div>
+    <div *ngSwitchCase="'Hulk'">Hulk</div>
+    <div *ngSwitchCase="'Thor'">Thor</div>
+    <div *ngSwitchCase="'Spiderman'">Spiderman</div>
+    <div *ngSwitchCase="SqrStatus.None">{{value}}</div>   
+    <div *ngSwitchDefault> {{value}} </div>
+   </div>
+  -->
+    <!-- {{value}}  -->
+
+
+    <article [ngSwitch]="sqrStatus">
+    <!-- <span *ngSwitchCase="'Sub'>sub</span>  -->
+
+    <!-- <div *ngSwitchCase="'Sub'> </div>   -->
+    <div *ngSwitchCase="'Sub'" class="blinking4"><img src="/assets/redsub.png" alt="red october"></div>  
+    <div *ngSwitchCase="'Warship'" class="blinking4"><img src="/assets/warship.png" alt="warship"></div>  
+  
+
+    <!-- <div *ngSwitchCase="'None'">{{value}}</div>    -->
+
+    <div *ngSwitchDefault> {{value}} </div>
+
+    </article>
+
+</div>
+

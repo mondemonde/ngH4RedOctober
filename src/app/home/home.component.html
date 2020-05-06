@@ -1,0 +1,136 @@
+<div class="article">
+
+    <div class="container-fluid px-1 parent" style="width: 100%;">
+  
+      <div class="row child col-12 d-flex">
+          <div class="child hud-container col-md-9 ">
+              <div class="row hud d-flex">
+                  <div class="row radar-container col-md-4">
+                    <table>
+                    <tr>
+                      <td style="vertical-align: top;">
+                        S O N A R :
+                      </td>
+                    </tr>
+                    <tr>
+                      <td style="vertical-align: top;">
+                        <div class="radar col-12" style="max-height: 300px;">                     
+  
+                          <app-radar></app-radar>  
+                        </div>
+    
+                      </td>
+                    </tr>
+  
+                    <tr>
+                      <td style="vertical-align: top;color:goldenrod">
+                      <hr style="border: 1px solid goldenrod">
+                      </td>
+                    </tr>
+  
+                    <tr>
+                      <td style="vertical-align: top;">
+  
+                        <div class="enemyHealth col-12">Enemy Target:</div>
+                      <div class="enemyDistance col-12" style="padding-left: 30px;">
+                        <table style="width: 100%;"> 
+                          <tr>
+                            <td></td>
+                            <td>Destination:</td>
+                            <td class="radarOutput" > USA</td>
+                          </tr>
+                          <tr>
+                            <td></td>
+                            <td>Striking distance:</td>
+                            <td class="radarOutput">2000 km</td>
+                          </tr>
+                          <tr>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                          </tr>
+                        </table>
+                        <p class="alert radarOutput" role="alert">striking distance must not be less then 1000 km</p>
+                      </div>
+                      </td>
+                    </tr>
+  
+                 
+                    </table>
+  
+                      <!-- <div class="warningStatus col-12" style='min-width: 250px;max-height: 50px;'>                
+                                       
+                      </div> -->                
+  
+  
+                      
+  
+  
+                  </div>
+                  <div class="board-container col-md">
+  
+                      <div class="warshipControl">HUD</div>
+                      
+                      <div class="Board">SECTORS:
+  
+                        <app-board></app-board>
+                        <!-- <section class="basic-flex">
+                          <div
+                          *ngFor="let val of xSquares;let x = index" >
+  
+                              <app-square
+                                  *ngFor="let val of ySquares;let y = index" 
+                                  [value] = "makeSquareValue(x,y)"
+                                  [id] = "makeSquareId(x,y)"
+                                  (click) = "makeMove(this)">                     
+                              </app-square>                        
+                        </div>                      
+                        </section> -->
+  
+  
+                    </div>
+  
+                      <div class="console">CONSOLE:
+                        <!-- <div class="tv">
+                          <div id="term" style="background-color: black;" ></div>
+                          <div></div>
+                          <div class="scanlines">cle
+                            
+                          </div> -->
+                          <app-h4-terminal></app-h4-terminal>
+  
+                      </div>
+  
+                    
+  
+  
+                  </div>
+  
+              </div>
+          </div>
+  
+          <div class="child banner col-md-3">
+           
+            <picture>
+              <source media="(min-width: 650px)" srcset='../assets/banner2.png'>
+              <source media="(min-width: 465px)" srcset="../assets/banner2.png">
+              <img src="../assets/redBanner.jpg" alt="Flowers" style="width:auto;">
+            </picture>
+  
+            <app-game-cycle
+            (TimerExpired)="gameLoop()" 
+            [ElapsTime]="'1'" 
+            >
+  </app-game-cycle>
+          </div>
+      </div>
+  
+      <div class="child col-12">
+          footer
+  
+       
+      </div>
+  </div>
+  
+  </div>
+  

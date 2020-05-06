@@ -1,6 +1,17 @@
+
+
+
+
 # NgHunt4RedOctober
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 9.1.1.
+
+
+## Key Steps in making game:
+
+1. Create major class submarine, warship, ocean
+2. let them interact in a service like Battleground.service
+
 
 ## Development server
 

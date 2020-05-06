@@ -1,0 +1,12 @@
+<section class="basic-flex">
+    <div
+    *ngFor="let val of xSquares;let x = index" >
+
+        <app-square
+            *ngFor="let val of ySquares;let y = index" 
+            [value] = "makeSquareValue(x,y)"
+            [id] = "makeSquareId(x,y)"
+            (click) = "makeMove(this)">                     
+        </app-square>                        
+  </div>                      
+  </section>

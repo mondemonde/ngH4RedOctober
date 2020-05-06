@@ -1,13 +1,176 @@
 <!doctype html>
 <html lang="en">
+
 <head>
   <meta charset="utf-8">
   <title>NgHunt4RedOctober</title>
+
   <base href="/">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <link rel="icon" type="image/x-icon" href="favicon.ico">
+
+  <!-- Required meta tags -->
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+  <!-- Bootstrap CSS -->
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
+    integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+
+  <link rel="icon" type="image/x-icon" href="./assets/favicon.ico">
+
+
+
+  <style>
+    .parent {
+      border-style: solid;
+      border-width: thick;
+      border-color: black;
+    }
+
+    .child {
+      border-style: solid;
+      border-width: thin;
+      /* border-color: darkgoldenrod; */
+    }
+
+    .radar-container {
+
+      background-color: red;
+
+    }
+
+    .board-container {
+      /* background-color: darkred; */
+      background-color: black;
+    }
+
+    html,
+    body {
+      margin: 0;
+      height: 100%;
+      background-color: #330000;
+
+    }
+
+    .radarOutput {
+      color: goldenrod;
+    }
+
+
+
+    /* BLINK */
+
+    .blink_terminal {
+      /* animation: blinker 1s linear infinite; */
+      animation: blinkerT 1s step-start infinite;
+      color: red;
+
+    }
+
+    @keyframes blinkerT {
+      50% {
+        opacity: 0;
+      }
+    }
+  </style>
+
+  <!-- FONT -->
+  <link rel="stylesheet" type="text/css" href="//fonts.googleapis.com/css?family=Allerta+Stencil" />
+
+  <!-- TERMINAL -->
+  <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
+  <!-- <script src="https://unpkg.com/jquery.terminal/js/jquery.terminal.min.js"></script>  
+  <link rel="stylesheet" href="https://unpkg.com/jquery.terminal/css/jquery.terminal.min.css" /> -->
+
+  <script src="assets/jquery.terminal.min.js"></script>
+  <link rel="stylesheet" href="assets/jquery.terminal.min.css" />
+
+
+  <!--   
+    <link rel="stylesheet" href="https://unpkg.com/typer-js/typer.css"> 
+    <script src="https://unpkg.com/typer-js"></script> -->
+
+
 </head>
-<body>
+
+<body style="font-family: Allerta Stencil">
   <app-root></app-root>
+
+
+
+  <!-- Optional JavaScript -->
+  <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+  <!-- <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js"
+        integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous">
+    </script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
+        integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous">
+    </script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"
+        integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous">
+    </script> -->
+
+
+  <script>
+   
+    $(document).ready(function () {
+      //github('jcubic/jquery.terminal');
+      //cssVars(); // ponyfill
+      //clear();
+    });
+
+    window.currentCmd = '';
+    window.homejs = {
+      exit1: function () {
+        console.log('home exit');
+      },
+
+      set_size: function () {
+        // for window height of 170 it should be 2s
+        // var height = $(window).height();
+        // var width = $(window).width()
+        // var time = (height * 2) / 170;
+        // scanlines[0].style.setProperty("--time", time);
+        // tv[0].style.setProperty("--width", width);
+        // tv[0].style.setProperty("--height", height);
+        return;
+      },
+
+
+      tree: function (obj) {
+        window.$term.echo(treeify.asTree(obj, true, true));
+      },
+
+      dispatchCmd: function (callback) {
+
+        //TIP: CALLING angular method from index page
+        const el = document.querySelector('app-h4-terminal');        
+        let result = el.readCmd(window.currentCmd);//readcmd is define in ANGULAR!!!!
+
+        if (result) {
+          window.$term.echo(result);
+        } else {
+          callback();
+        }
+
+      },
+
+      afterDispatchCommand: function () {
+        let command = this.currentStrCmd; //window.currentCmd;
+        var result = window.eval(command);
+        if (result) {
+          window.term.echo('<#jQuery>');
+        } else if (result && typeof result === 'object') {
+          //tree(result);
+        } else if (result !== undefined) {
+          window.term.echo(new String(result));
+        }
+      }
+
+
+
+    }
+  </script>
+
 </body>
+
 </html>

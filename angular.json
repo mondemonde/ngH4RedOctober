@@ -25,12 +25,16 @@
             ],
             "styles": [
               "src/styles.css",
-              "../node_modules/bulma/css/bulma.css",
-              "../node_modules/ng2-toastr/bundles/ng2-toastr.min.css"
+              "node_modules/bulma/css/bulma.css",
+             "node_modules/ngx-toastr/toastr.css",
+              "node_modules/typer-js/typer.css",             
+              "src/assets/jquery.terminal.min.css"
+
             ],
             "scripts": [
 
-            
+              "node_modules/jquery/dist/jquery.min.js",              
+              "src/assets/jquery.terminal.min.js"               
             ]
           },
           "configurations": {
