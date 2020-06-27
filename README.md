@@ -4,6 +4,8 @@
 
 # NgHunt4RedOctober
 
+demo: https://hunt4redoctober.azurewebsites.net/home
+
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 9.1.1.
 
 
